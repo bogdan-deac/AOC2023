@@ -80,6 +80,6 @@ main = do
         input <- readFile "data.txt"
         print $ sum $solution_1 $ lines input
         let raw = solution_2 $ lines input
-        let values = map (\(t, _) ->map snd $ filter (\(t',_) -> t' ==t) raw ) (duplicateElements (\(t,_) (t',_)-> t==t') raw)
+        let values = map (\(t, _) ->map snd $ filter ((==t).fst) raw ) (duplicateElements (\(t,_) (t',_)-> t==t') raw)
         let gearRatioSum = sum $ map product $filter (\x -> length x == 2)  values
         print gearRatioSum -- part 2
