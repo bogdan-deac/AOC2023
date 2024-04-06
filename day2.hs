@@ -37,8 +37,7 @@ main = do
         let indexToGames = [(read (takeWhile isDigit line):: Int, gameSplit $ tail $ dropWhile (not.isSpace) line) |line <- lns]
         let validGames = filter (\(i, games) -> all isGameValid games) indexToGames
         print $ sum $ map fst validGames -- part 1
-        let allGames =  snd <$> indexToGames
-        let maxBalls = map (maximum . map red A.&&& maximum. map green A.&&& maximum. map blue) allGames
+        let maxBalls = map ((maximum . map red A.&&& maximum. map green A.&&& maximum. map blue). snd ) indexToGames
         let powers = map (\(a,(b,c)) -> a*b*c) maxBalls
         print $ sum powers
 
