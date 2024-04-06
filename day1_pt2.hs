@@ -30,7 +30,7 @@ wordToDigit "nine" = "9"
 wordToDigit str = str
 
 main = do
-        x <- readFile "day2.txt"
+        x <- readFile "data.txt"
         let ls = lines x
         let edigits = [Parsec.parse parser "" l| l <- ls]
         let digits = [head.wordToDigit <$> filter (/="") a | Right a <- edigits, not (null a)]
