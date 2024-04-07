@@ -47,7 +47,7 @@ propagate weights vals = V.toList $ foldl' (propagateStep vWeights) vvals [0..V.
 main :: IO ()
 main = do
         fileData <- map (words . tail . dropWhile (/= ':')) . lines <$> readFile "data.txt"
-        let op f = (<$>) (f <$>)
+        let op = (<$>).(<$>)
         let (winners, numbers) = bimap (op read) (op read. fmap tail) $ unzip  ( span (/= "|") <$> fileData)
         print $ sum $ zipWith getScore winners numbers -- part 1
         let weights =  zipWith winnerCount winners numbers
