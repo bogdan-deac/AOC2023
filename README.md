@@ -20,3 +20,8 @@ Pretty simple, but probably could have done it in a cleaner fashion.
 
 Probably the most difficult one so far, but array manipulation in haskell is tough.
 Didn't bother using Vector or things like that.
+
+## Day 4
+
+Honestly the hardest part was understanding how the part 2 scoring works, not that difficult after that.
+Added some small optimizations using vectors.

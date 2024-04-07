@@ -4,4 +4,4 @@ import Control.Arrow ((&&&))
 
 
 solution :: [String] -> Int
-solution =sum . map ((\x -> read x::Int). (\(a,b) -> [a, b]) . (head &&& last) . filter isDigit)
+solution =sum . map ( read . (\(a,b) -> [a, b]) . (head &&& last) . filter isDigit)
