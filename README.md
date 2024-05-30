@@ -25,3 +25,9 @@ Didn't bother using Vector or things like that.
 
 Honestly the hardest part was understanding how the part 2 scoring works, not that difficult after that.
 Added some small optimizations using vectors.
+
+## Day 5 - WIP
+
+## Day 6
+
+Fairly simple math. Careful about overflows when squaring
